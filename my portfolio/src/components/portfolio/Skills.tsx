@@ -3,42 +3,29 @@ import { motion } from "framer-motion";
 export default function Skills() {
     const skillCategories = [
         {
-            title: "Machine Learning & AI",
+            title: "AI Expertise",
             skills: [
                 { name: "Python", level: 95 },
-                { name: "TensorFlow/PyTorch", level: 90 },
-                { name: "Scikit-learn", level: 92 },
-                { name: "Deep Learning", level: 88 },
-                { name: "NLP/Transformers", level: 85 },
-                { name: "Computer Vision", level: 82 }
+                { name: "Prompt Engineering", level: 90 },
+                { name: "Machine Learning", level: 88 },
              ]
         },
         {
-            title: "Full Stack Development",
+            title: "Front End Development",
             skills: [
                 { name: "React/Next.js", level: 93 },
                 { name: "Node.js", level: 87 },
                 { name: "TypeScript", level: 90 },
-                { name: "GraphQL", level: 85 },
-                { name: "PostgreSQL", level: 88 },
-                { name: "Docker/Kubernetes", level: 83 }
+                {name:"html", level:85},
+                {name:"css", level:80},
             ]
         },
-        {
-            title: "Data & Cloud",
-            skills: [
-                { name: "Apache Spark", level: 86 },
-                { name: "AWS/GCP", level: 89 },
-                { name: "MLOps", level: 84 },
-                { name: "Apache Kafka", level: 81 },
-                { name: "Elasticsearch", level: 78 },
-             { name: "Monitoring & Logging", level: 85 }
-            ]
-        }
+        
+
     ];
 
     return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen flex items-right justify-center px-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -119,11 +106,7 @@ export default function Skills() {
           <h3 className="text-2xl font-bold text-white mb-8">Certifications & Achievements</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "AWS Machine Learning Specialty",
-              "Google Cloud ML Engineer", 
-              "TensorFlow Developer Certificate",
-              "Kubernetes Administrator (CKA)",
-              "Open Source Contributor"
+              "AWS Foundation in Prompt Engineering",
             ].map((cert, index) => (
               <motion.span
                 key={cert}

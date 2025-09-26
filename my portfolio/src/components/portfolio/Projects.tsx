@@ -3,42 +3,25 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 // Projects grid showcasing featured work.
 export default function Projects() {
-    const projects = [{
-        title: "Neural Trading Bot",
-        description: "Deep reinforcement learning systems for automated trading, real-time market analysis, and risk management.",
-        tech:["Python", "TensorFlow", "React", "WebSocket", "Docker"],
-        image:"https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop&crop=center",
-        github: "#",
-        demo: "#",
-        category: "AI/ML"
-    },
+    const projects = [
     {
         title:"Smart Document Analyzer",
         description: "NLP-powered document processing system that extracts insights from unstructured text with 95% accuracy using transformer models.",
-        tech: ["Python", "Transformers", "FastAPI", "Vue.js", "PostgreSQL"],
+        tech: ["Python", "Node.js", "React", "Perplexity.AI"],
         image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center",
         github: "#",
         demo: "#",
-        category: "NLP"
+        category: "Web App"
     },
     {
         title: "Real-time Analytics Dashboard",
         description: "High-performance dashboard processing millions of events per second with predictive analytics and beautiful data visualizations.",
-        tech: ["React", "D3.js", "Node.js", "Redis", "Kafka"],
+        tech: ["React", "Node.js", "Fast API", "AWS"],
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
         github: "#",
         demo: "#",
         category: "Web App" 
     },
-    {
-        title: "Computer Vision Pipeline",
-        description: "Production-ready object detection and tracking system for autonomous vehicles with edge computing optimization.",
-        tech: ["PyTorch", "OpenCV", "CUDA", "ROS", "C++"],
-        image: "https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&h=400&fit=crop&crop=center",
-        github: "#",
-        demo: "#",
-        category: "Computer Vision"
-    }
     ];
 
     return (
@@ -53,12 +36,12 @@ export default function Projects() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Featured Projects
+              PROJECTS
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8" />
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Showcasing innovative solutions that blend cutting-edge AI with practical applications
+            Showcasing innovative solutions with implenting AI for data analysis an research
           </p>
         </motion.div>
 

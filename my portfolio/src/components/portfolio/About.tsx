@@ -7,22 +7,22 @@ export default function About() {
         {
             icon:Brain,
             title: "Machine Learning",
-            description: " Deep learning, NLP, computer vision, and MLOps expertise"
+            description: ""
         },
         {
             icon:Code,
-            title:"Full stack development",
-            description:"React, Python, Node.js, and modern web development"
+            title:"Frontend development",
+            description:""
         },
         {
             icon: Database,
-            title: "Data Engineering",
-            description: "Building scalable data pipelines and analytics platforms"
+            title: "Data Analysis",
+            description: ""
         },
         {
             icon:Zap,
-            title:"Performance Optimizer",
-            description: "Optimizing models and applications for production scale"
+            title:"n8n Optimizer",
+            description: ""
         }
     ];
 
@@ -54,18 +54,19 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate technologist who bridges the gap between data science and software engineering. 
-              With over 5 years of experience, I specialize in building production-ready ML systems that solve 
-              real-world problems.
+                I'm an aspiring data analyst and quantitative researcher with a strong passion for using data to uncover insights
+                and solve complex problems. While I'm at the beginning of my professional journey,
+                I bring a disciplined work ethic, curiosity, and a commitment to continuous learning.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              My journey began with a fascination for how machines can learn from data. Today, I architect 
-              end-to-end solutions that not only deliver accurate predictions but also provide seamless user 
-              experiences through elegant interfaces.
+                My interest started with a fascination for how data can reveal patterns and drive better decisions.
+                Today, I'm focused on building the skills needed to analyze financial markets, 
+                design data-driven strategies, and contribute meaningfully to research projects.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              When I'm not coding, you'll find me exploring the latest research papers, contributing to open 
-              source projects, or sharing knowledge with the developer community.
+               Outside of my studies and self-learning, I dedicate time to exploring new methods, practicing with real datasets, 
+               and expanding my knowledge through research articles and community discussions. 
+               I'm eager to bring this passion, persistence, and growth mindset into a professional setting.
             </p>
 
             <motion.div

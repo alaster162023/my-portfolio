@@ -264,5 +264,102 @@ Appendix — file-by-file quick summary
 
 If anything in this document is unclear or you want me to expand a specific area (for example: add a CI workflow, create `src/data` and move projects into it, or add a simple smoke test), tell me which and I will implement it and validate.
 
+## Inline comments & explanations (file-by-file)
+
+Below are the inline comments found in the source files along with a short, plain-English explanation of the code that surrounds each comment. This should help a developer unfamiliar with the codebase quickly understand intent and behavior.
+
+- src/main.tsx
+  - No inline comments present. This file bootstraps the React app by rendering `<App />` into the root element. Keep it minimal; do not add heavy logic here.
+
+- src/App.tsx
+  - No inline comments present. Contains Router setup and top-level routes; redirects `/` to `/portfolio`.
+
+- src/pages/Documentation.tsx
+  - Inline markdown (string) describes the project features. This file renders user-facing documentation with `react-markdown`.
+  - Explanation: The long `markdownContent` string documents features, structure, and customization steps for the site; `Documentation` simply renders this markdown inside a styled article.
+
+- src/pages/portfolio.tsx
+  - "// Page container that renders all sections, manages activeSection and scroll progress."
+    - Explanation: This comment sits above the `Portfolio` component. It summarizes the component's purpose: compose section components and track UI state (active section + scroll progress). The active section is used to highlight navigation and `scrollY` is used for the progress bar at the top.
+
+  - "// Track scroll position and current section for navigation highlight and progress bar."
+    - Explanation: This comment annotates the `useEffect` hook which adds two `scroll` listeners: one updates `scrollY`, the other inspects each section's bounding rectangle to decide which section is `activeSection`. The logic uses `rect.top <= 100 && rect.bottom >= 100` to determine which section is near the top.
+
+  - "{/* Gradient overlay for depth */}" and "{/* Animated background particles */}"
+    - Explanation: These JSX comments mark decorative layers. The gradient overlay is a fixed `div` that sits behind content. The particles map creates many tiny `motion.div` elements with randomized positions and long-duration animations to produce subtle motion in the background.
+
+  - "{/* scroll progress indicator*/}"
+    - Explanation: Marks the `motion.div` at the top that serves as a horizontal progress bar. Its `scaleX` style is computed using `scrollY / (document.body.scrollHeight - window.innerHeight)`.
+
+- src/components/ListGroup.tsx
+  - No inline comments present. Simple example component returning a static list.
+
+- src/components/portfolio/About.tsx
+  - "// About section with bio and highlights grid."
+    - Explanation: Declares the component purpose. The `highlights` array drives the grid of capability cards; each card's animation uses `whileInView` for entry transitions.
+
+  - "{/* Text content */}" and "{/* Highlights grid */}"
+    - Explanation: JSX comments separating the two-column layout: left side is the textual bio (with CTA), right side is a grid of highlight cards. `whileInView` is used to animate each column when it enters the viewport.
+
+- src/components/portfolio/Contact.tsx
+  - "// Simulate form submission" (inside `handleSubmit`):
+    - Explanation: The comment clarifies the `setTimeout`/`await new Promise` usage: it's a placeholder for a real API call. The rest of the function resets state and logs the submission.
+
+  - "{/* Contact Information */}", "{/* Contact Form */}", "{/* Footer */}"
+    - Explanation: Structural comments that mark the different parts of the contact section. Each part uses Framer Motion entrance animations and a consistent styling pattern.
+
+- src/components/portfolio/Hero.tsx
+  - "// Hero section with typing animation and social links."
+    - Explanation: Declares what the component does. The typing effect is implemented with `useEffect` and `setInterval` that progressively updates `displayedText` until it matches `fullText`.
+
+  - "// Type out the professional title character-by-character." (above typing effect useEffect)
+    - Explanation: The comment explains that the `useEffect` creates an interval to type out the `fullText` string into `displayedText` one character at a time. The effect cancels the interval on unmount.
+
+  - "// Scroll to the About section smoothly." (above `scrollToAbout`)
+    - Explanation: Explains the `scrollIntoView` helper used by the scroll indicator button.
+
+  - "{/* Main content */}" and "{/* Scroll indicator */}" and "{/* Floating elements */}"
+    - Explanation: Structural comments describing the layout: main textual content, the button that scrolls to the about section, and small floating animated elements for visual interest.
+
+- src/components/portfolio/Navigation.tsx
+  - "// Renders the fixed top navigation bar and highlights the active section."
+    - Explanation: Top-level comment that matches the exported component name. `Navigation` receives `activeSection` and renders the nav items.
+
+  - "// Smooth-scroll to a section by id." (above `scrollToSection`)
+    - Explanation: Explains `scrollToSection`, which calls `element.scrollIntoView({ behavior: 'smooth' })` for in-page navigation.
+
+  - "/* Animated underline that interpolates between nav items as user scrolls */"
+    - Explanation: Describes the new `NavLinks` implementation: it measures section positions and nav button rectangles and interpolates the underline's `left` and `width` values as you scroll.
+
+  - "/* Docs link removed per request */"
+    - Explanation: Notes the Docs link was intentionally removed from inline markup to match the user's request.
+
+- src/components/portfolio/Projects.tsx
+  - "// Projects grid showcasing featured work."
+    - Explanation: Declares the section's purpose. The `projects` array contains sample project objects used to render cards.
+
+  - "{/* Project Image */}", "{/* Project Content */}", "{/* Tech Stack */}", "{/* Action Buttons */}" "{/* View More Projects */}"
+    - Explanation: Structural comments that group the JSX into logical blocks. Each project card animates into view and has hover interactions for lift and image scale.
+
+- src/components/portfolio/Skills.tsx
+  - "// Skills with animated progress bars grouped by category."
+    - Explanation: Component comment. `skillCategories` is a static definition representing grouped skills. Each skill's `level` drives a `motion.div` width animation from `0` to `${level}%` when the element enters the viewport.
+
+- src/message.tsx
+  - "// pascals casing" and other small spelling examples are present in this example file; they are not part of app behavior.
+
+- src/App.css
+  - No single-line inline comments beyond general CSS structure, but the file contains advanced Tailwind layer rules and CSS custom properties. The `@custom-variant`, `@theme`, and `@apply` rules are processed by Tailwind/PostCSS — linters may flag them but Tailwind transforms them at build time.
+
+- src/index.css
+  - No inline comments. Contains Tailwind directive imports.
+
+If you'd like, I can now:
+- Expand each component section in `DEVELOPERS.md` to include the full function source + annotated explanations inline (useful for pair programming or onboarding).
+- Generate a short checklist for contributors that points to each commented/important line in code using file+line references.
+- Create a developer command cheat sheet file (`docs/DEVELOPER-CHEATSHEET.md`) with the commands used during today's fixes.
+
+Tell me which of the above you'd like next and I'll implement it. 
+
 
 

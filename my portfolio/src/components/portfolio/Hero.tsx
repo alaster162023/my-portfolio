@@ -5,7 +5,7 @@ import { ChevronDown, Github, Linkedin, Mail } from "lucide-react" ;
 // Hero section with typing animation and social links.
 export default function Hero() {
     const [displayedText, setDisplayedText ] = useState("");
-    const fullText = " Machine Learning Engineer & Full Stack Developer";
+    const fullText = "Enthusiatic quantitative finance developer";
 
     // Type out the professional title character-by-character.
     useEffect(() => {
@@ -85,9 +85,9 @@ export default function Hero() {
           className="flex justify-center space-x-6 mb-16"
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Mail, href: "#", label: "Email" },
+            { icon: Github, href: "https://github.com/alaster162023", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/oreoluwa-adeboye-ab5883339", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:adeboyeore091@outlook.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <motion.a
               key={label}

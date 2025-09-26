@@ -31,14 +31,14 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "alex.chen@example.com", href: "mailto:alex.chen@example.com" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" }
+    { icon: Mail, label: "Email", value: "adeboyeoreoluwa091@outlook.com", href: "mailto:adeboyeore091@outlook.com" },
+    { icon: Phone, label: "Phone", value: "+1 (639) 3843898 ", href: "tel:+16393843898" },
+    { icon: MapPin, label: "Location", value: "SASKATOON, SK", href: "https://www.saskatoon.ca/" }
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/alaster162023", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/oreoluwa-adeboye-ab5883339", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" }
   ];
 
