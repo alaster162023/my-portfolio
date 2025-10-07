@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 // Renders the fixed top navigation bar and highlights the active section.
